@@ -180,10 +180,10 @@
             sensor-bindings = <&scroll_left_right>, <&scroll_left_right>;
 
             bindings = <
-&kp F1            &kp F2        &kp F3         &kp F4            &kp F5             &kp F6           &kp F7           &kp F8           &kp F9           &kp F10
-&mt2 F6 NUMBER_6  &mt2 F7 N7    &mt2 F8 N8     &mt2 F9 N9        &mt2 F10 N0        &kp KP_DOT       &kp KP_NUMBER_4  &kp KP_NUMBER_5  &kp KP_NUMBER_6  &kp F11
-&mt2 F11 GRAVE    &mt2 F12 SQT  &kp SEMICOLON  &kp LEFT_BRACKET  &kp RIGHT_BRACKET  &kp KP_NUMBER_0  &kp KP_NUMBER_1  &kp KP_NUMBER_2  &kp KP_NUMBER_3  &kp KP_MINUS
-&trans            &trans                       &trans            &trans             &kp DELETE       &trans                            &none            &kp F12
+&kp F1            &kp F2        &kp F3      &kp F4       &kp F5         &kp F6         &kp F7                &kp F8             &kp F9         &kp F10
+&mt2 F6 NUMBER_6  &mt2 F7 N7    &kp DOLLAR  &kp AT_SIGN  &kp AMPERSAND  &kp ASTERISK   &kp LEFT_PARENTHESIS  &kp RIGHT_BRACE    &kp PIPE       &kp LEFT_BRACKET
+&mt2 F11 GRAVE    &mt2 F12 SQT  &kp HASH    &kp PERIOD   &kp SEMICOLON  &kp LESS_THAN  &kp GREATER_THAN      &kp RIGHT_BRACKET  &kp BACKSLASH  &kp F11
+&trans            &trans                    &trans       &trans         &trans         &trans                                   &kp COMMA      &kp F12
             >;
         };
 
