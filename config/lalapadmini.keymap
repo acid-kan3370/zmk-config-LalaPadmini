@@ -162,7 +162,7 @@
     keymap {
         compatible = "zmk,keymap";
 
-        DEFAULT_LAYER {
+        DEFAULT {
             display-name = "Default";
             sensor-bindings = <&scroll_down_up>, <&scroll_up_down>;
 
@@ -203,10 +203,10 @@
             sensor-bindings = <&volume_up_down>, <&volume_up_down>;
 
             bindings = <
-&kp ESCAPE           &kp GRAVE     &trans     &trans              &trans              &kp MINUS   &kp INSERT        &kp HOME        &kp PRINTSCREEN  &kp END
-&kp TAB              &kp LG(S)     &trans     &bootloader         &kp LA(LCTRL)       &kp COMMA   &kp SEMI          &kp PAGE_UP     &kp UP_ARROW     &kp PAGE_DOWN
-&mt2 LS(CAPS) LCTRL  &kp LC(X)     &kp LC(C)  &kp LC(V)           &kp LC(LEFT_SHIFT)  &kp PERIOD  &kp SINGLE_QUOTE  &kp LEFT_ARROW  &kp DOWN_ARROW   &kp RIGHT_ARROW
-&kp LEFT_SHIFT       &kp LEFT_ALT             &kp LC(LEFT_SHIFT)  &trans              &trans      &trans                            &to 0            &kp LC(A)
+&kp ESCAPE           &kp GRAVE     &trans     &trans         &trans              &kp MINUS   &kp INSERT        &kp HOME        &kp PRINTSCREEN  &kp END
+&kp TAB              &kp LG(S)     &trans     &bootloader    &kp LA(LCTRL)       &kp COMMA   &kp SEMI          &kp PAGE_UP     &kp UP_ARROW     &kp PAGE_DOWN
+&mt2 LS(CAPS) LCTRL  &kp LC(X)     &kp LC(C)  &kp LC(V)      &kp LC(LEFT_SHIFT)  &kp PERIOD  &kp SINGLE_QUOTE  &kp LEFT_ARROW  &kp DOWN_ARROW   &kp RIGHT_ARROW
+&kp LEFT_SHIFT       &kp LEFT_ALT             &kp BACKSPACE  &trans              &trans      &trans                            &to 0            &kp LC(A)
             >;
         };
 
@@ -253,7 +253,7 @@
         BT {
             bindings = <
 &trans  &trans  &trans  &trans  &trans  &trans       &bt BT_SEL 0  &bt BT_SEL 2  &bt BT_SEL 3  &bt BT_SEL 4
-&trans  &trans  &trans  &trans  &trans  &trans       &trans        &trans        &trans        &trans
+&trans  &trans  &trans  &trans  &trans  &bootloader  &trans        &trans        &trans        &trans
 &trans  &trans  &trans  &trans  &trans  &bootloader  &trans        &trans        &trans        &bt BT_CLR
 &trans  &trans          &trans  &trans  &trans       &trans                      &trans        &bt BT_CLR_ALL
             >;
