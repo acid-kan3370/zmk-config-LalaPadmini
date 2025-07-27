@@ -65,9 +65,10 @@
     };
 };
 
-&mt { quick-tap-ms = <200>; };
-
-&lt { quick-tap-ms = <200>; };
+&mt {
+    quick-tap-ms = <0>;
+    flavor = "balanced";
+};
 
 / {
     behaviors {
@@ -129,6 +130,15 @@
             #binding-cells = <0>;
             bindings = <&mo 1>, <&mo 2>;
         };
+
+        layer_mkp: layer_mkp {
+            compatible = "zmk,behavior-hold-tap";
+            label = "LAYER_MKP";
+            bindings = <&mo>, <&mkp>;
+
+            #binding-cells = <2>;
+            tapping-term-ms = <200>;
+        };
     };
 
     combos {
@@ -167,10 +177,10 @@
             sensor-bindings = <&scroll_down_up>, <&scroll_up_down>;
 
             bindings = <
-&lt 3 Q           &lt 3 W           &lt 3 E  &lt 2 R    &lt 1 T      &lt 1 Y        &lt 2 U     &lt 3 I   &kp O     &kp P
-&mt A LEFT_SHIFT  &mt S LEFT_SHIFT  &lt 3 D  &lt 2 F    &lt 1 G      &lt 1 H        &lt 2 J     &lt 3 K   &kp L     &mkp MB4
-&mt LEFT_SHIFT Z  &mt X LEFT_SHIFT  &lt 3 C  &lt 2 V    &lt 1 B      &lt 1 N        &lt 2 M     &mkp MB1  &mkp MB2  &mkp MB3
-&kp LCTRL         &kp LEFT_ALT               &kp SPACE  &lt 3 ENTER  &kp BACKSPACE  &kp ESCAPE            &to 3     &mkp MB5
+&lt 3 Q           &lt 3 W           &lt 3 E  &lt 2 R    &lt 1 T      &lt 1 Y        &lt 2 U     &lt 3 I   &kp O             &kp P
+&mt A LEFT_SHIFT  &mt S LEFT_SHIFT  &lt 3 D  &lt 2 F    &lt 1 G      &lt 1 H        &lt 2 J     &lt 3 K   &kp L             &mkp MB4
+&mt LEFT_SHIFT Z  &mt X LEFT_SHIFT  &lt 3 C  &lt 2 V    &lt 1 B      &lt 1 N        &lt 2 M     &mkp MB1  &layer_mkp 5 MB2  &mkp MB3
+&kp LCTRL         &kp LEFT_ALT               &kp SPACE  &lt 3 ENTER  &kp BACKSPACE  &kp ESCAPE            &to 3             &mkp MB5
             >;
         };
 
@@ -223,10 +233,10 @@
         SCROLL_R_LAYER {
             display-name = "scroll_r_layer";
             bindings = <
-&trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans
-&trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans
-&trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans
-&trans  &trans          &trans  &trans  &trans  &trans          &trans  &trans
+&trans  &trans  &trans  &trans  &trans  &trans          &trans  &trans  &trans  &trans
+&trans  &trans  &trans  &trans  &trans  &trans          &trans  &trans  &trans  &trans
+&trans  &trans  &trans  &trans  &trans  &bt BT_CLR_ALL  &trans  &trans  &trans  &trans
+&trans  &trans          &trans  &trans  &trans          &trans          &trans  &trans
             >;
         };
 
