@@ -36,7 +36,7 @@ layers:
   - SPACE
   - {t: ENTER, h: system_layer}
   - BACKSPACE
-  - ESCAPE
+  - DELETE
   - {t: system_layer, h: toggle}
   - '&mkp MB5'
   secondary_layer:
@@ -121,7 +121,7 @@ layers:
   - {t: ESCAPE, type: held}
   - '`'
   - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
+  - Ctl+R
   - {t: ▽, type: trans}
   - '-'
   - INS
@@ -132,7 +132,7 @@ layers:
   - Gui+S
   - Ctl+Z
   - Ctl+Y
-  - BT CLR ALL
+  - '&bootloader'
   - ','
   - ;
   - PAGE UP
@@ -166,7 +166,7 @@ layers:
   - {t: ▽, type: trans}
   - '&mkp MCLK'
   - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
+  - BT CLR ALL
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
@@ -317,5 +317,3 @@ combos:
   k: ESCAPE
 - p: [10, 11]
   k: TAB
-- p: [30, 31]
-  k: LWIN
