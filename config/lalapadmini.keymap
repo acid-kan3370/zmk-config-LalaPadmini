@@ -22,7 +22,7 @@
 &glidepoint_listener_R {
     input-processors =
         <&zip_xy_transform INPUT_TRANSFORM_X_INVERT>,
-        //<&zip_xy_transform (INPUT_TRANSFORM_XY_SWAP | INPUT_TRANSFORM_X_INVERT | INPUT_TRANSFORM_Y_INVERT)>,
+        //<&zip_xy_transform (INPUT_TRANSFORM_XY_SWAP | INPUT_TRANSFORM_X_INVERT | INPUT_TRANSFORM_Y_INVERT)>,,
         <&zip_xy_scaler 6 5>,
         <&zip_temp_layer MOUSE_R_LAYER 300>;
 
@@ -30,7 +30,7 @@
         layers = <SECONDARY_LAYER>;
         input-processors =
             <&zip_xy_transform INPUT_TRANSFORM_X_INVERT>,
-            //<&zip_xy_transform (INPUT_TRANSFORM_XY_SWAP | INPUT_TRANSFORM_X_INVERT | INPUT_TRANSFORM_Y_INVERT)>,
+            //<&zip_xy_transform (INPUT_TRANSFORM_XY_SWAP | INPUT_TRANSFORM_X_INVERT | INPUT_TRANSFORM_Y_INVERT)>,,
             <&zip_xy_scaler 3 5>,
             <&zip_temp_layer MOUSE_R_LAYER 300>;
     };
@@ -39,7 +39,7 @@
         layers = <SCROLL_R_LAYER>;
         input-processors =
             <&zip_xy_to_scroll_mapper>,
-            //<&zip_scroll_transform (INPUT_TRANSFORM_XY_SWAP | INPUT_TRANSFORM_Y_INVERT)>,
+            //<&zip_scroll_transform (INPUT_TRANSFORM_XY_SWAP | INPUT_TRANSFORM_Y_INVERT)>,,
             <&zip_scroll_scaler 1 32>;
     };
 };
@@ -47,7 +47,7 @@
 &glidepoint_listener_L {
     input-processors =
         <&zip_xy_transform INPUT_TRANSFORM_X_INVERT>,
-        //<&zip_xy_transform (INPUT_TRANSFORM_XY_SWAP | INPUT_TRANSFORM_X_INVERT | INPUT_TRANSFORM_Y_INVERT)>,
+        //<&zip_xy_transform (INPUT_TRANSFORM_XY_SWAP | INPUT_TRANSFORM_X_INVERT | INPUT_TRANSFORM_Y_INVERT)>,,
         <&zip_xy_scaler 3 2>,
         <&zip_temp_layer MOUSE_L_LAYER 300>;
 
@@ -55,7 +55,7 @@
         layers = <TERTIARY_LAYER>;
         input-processors =
             <&zip_xy_transform INPUT_TRANSFORM_X_INVERT>,
-            //<&zip_xy_transform (INPUT_TRANSFORM_XY_SWAP | INPUT_TRANSFORM_X_INVERT | INPUT_TRANSFORM_Y_INVERT)>,
+            //<&zip_xy_transform (INPUT_TRANSFORM_XY_SWAP | INPUT_TRANSFORM_X_INVERT | INPUT_TRANSFORM_Y_INVERT)>,,
             <&zip_xy_scaler 3 4>,
             <&zip_temp_layer MOUSE_L_LAYER 300>;
     };
@@ -64,7 +64,7 @@
         layers = <SCROLL_L_LAYER>;
         input-processors =
             <&zip_xy_to_scroll_mapper>,
-            //<&zip_scroll_transform (INPUT_TRANSFORM_XY_SWAP | INPUT_TRANSFORM_Y_INVERT)>,
+            //<&zip_scroll_transform (INPUT_TRANSFORM_XY_SWAP | INPUT_TRANSFORM_Y_INVERT)>,,
             <&zip_scroll_scaler 1 32>;
     };
 };
@@ -143,6 +143,13 @@
             #binding-cells = <2>;
             tapping-term-ms = <200>;
         };
+
+        mouse_click: mouse_click {
+            compatible = "zmk,behavior-tap-dance";
+            label = "MOUSE_CLICK";
+            #binding-cells = <0>;
+            bindings = <&mkp MB1>, <&mouse_click_macro>, <&mkp MB2>;
+        };
     };
 
     combos {
@@ -165,6 +172,13 @@
             #binding-cells = <0>;
             bindings = <&mkp LCLK>;
             label = "MACRO_LTAP";
+        };
+
+        mouse_click_macro: mouse_click_macro {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&mkp MB1 &mkp MB1>;
+            label = "MOUSE_CLICK_MACRO";
         };
     };
 
