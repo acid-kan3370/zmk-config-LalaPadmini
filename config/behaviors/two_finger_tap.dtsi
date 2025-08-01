@@ -1,0 +1,9 @@
+/ {
+    behaviors {
+        two_finger_tap: custom_gesture {
+            compatible = "zmk,behavior-tap";
+            #binding-cells = <0>;
+            bindings = <&kp KC_BTN2>; // 右クリック
+        };
+    };
+};
