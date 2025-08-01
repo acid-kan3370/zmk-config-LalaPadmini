@@ -3,6 +3,9 @@
 #include <dt-bindings/zmk/bt.h>
 #include <dt-bindings/zmk/keys.h>
 #include <dt-bindings/zmk/pointing.h>
+#include <dt-bindings/input/input-event-codes.h>
+
+
 
 #define DEFAULT_LAYER   0
 #define SECONDARY_LAYER 1
@@ -19,11 +22,12 @@
 
 // cirque trackpad input&layer control
 
-&glidepoint_listener_R {
+&glidepoiつnt_listener_R {
     input-processors =
         <&zip_xy_transform INPUT_TRANSFORM_X_INVERT>,
         //<&zip_xy_transform (INPUT_TRANSFORM_XY_SWAP | INPUT_TRANSFORM_X_INVERT | INPUT_TRANSFORM_Y_INVERT)>,,
         <&zip_xy_scaler 6 5>,
+        <&mouse_click>,
         <&zip_temp_layer MOUSE_R_LAYER 300>;
 
     lowspeedmode {
