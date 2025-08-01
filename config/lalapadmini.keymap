@@ -22,7 +22,7 @@
 
 // cirque trackpad input&layer control
 
-&glidepoiつnt_listener_R {
+&glidepoint_listener_R {
     input-processors =
         <&zip_xy_transform INPUT_TRANSFORM_X_INVERT>,
         //<&zip_xy_transform (INPUT_TRANSFORM_XY_SWAP | INPUT_TRANSFORM_X_INVERT | INPUT_TRANSFORM_Y_INVERT)>,,
