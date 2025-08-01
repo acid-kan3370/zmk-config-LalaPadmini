@@ -140,9 +140,9 @@
             tapping-term-ms = <200>;
         };
         two_finger_tap: custom_gesture {
-            compatible = "zmk,behavior-tap";
+            compatible = "zmk,behavior-mouse-key-press";
             #binding-cells = <0>;
-            bindings = <&kp KC_BTN2>;
+            bindings = <&mkp MB1>;
         };
     };
 
