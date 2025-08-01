@@ -95,9 +95,10 @@
         spi-max-frequency = <1000000>;
         dr-gpios = <&xiao_d 7 (GPIO_ACTIVE_HIGH)>;
 
-        rotate-90;
-        x-invert;
-        y-invert;
+        //もともとタッチパッドは右に90度回転して設置している
+        rotate-90; //更に90度回転
+        x-invert;  //x軸反転
+        //y-invert; //右下が右クリックになるように。反転させない
 
 	sensitivity = "2x";
         //no-taps;
