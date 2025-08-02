@@ -103,7 +103,7 @@
 	sensitivity = "2x";
         //no-taps;
         no-smoothing;
-	tap-binding = <&mouse_click>;   // keymapで定義したマクロを指定
+	tap-binding = <&MOUSE_CLICK>;   // keymapで定義したマクロを指定
     };
 };
 
