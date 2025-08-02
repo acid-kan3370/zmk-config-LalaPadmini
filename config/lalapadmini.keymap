@@ -190,7 +190,7 @@
             compatible = "zmk,input-processor-behaviors";
             #input-processor-cells = <0>;
             codes    = <INPUT_BTN_1>;
-            bindings = <&kp LC(V)  >;
+            bindings = <&mouse_click>;
         };
     };
 
