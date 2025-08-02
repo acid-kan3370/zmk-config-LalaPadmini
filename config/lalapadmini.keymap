@@ -185,6 +185,15 @@
         };
     };
 
+    input_processors {
+        zip_right_click_trigger_paste: zip_right_click_trigger_paste {
+            compatible = "zmk,input-processor-behaviors";
+            #input-processor-cells = <0>;
+            codes    = <INPUT_BTN_1>;
+            bindings = <&kp mouse_click>;
+        };
+    };
+
     keymap {
         compatible = "zmk,keymap";
 
