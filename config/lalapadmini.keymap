@@ -31,7 +31,7 @@
         //<&zip_button_behaviors &mkp MB1>;
         //<&zip_button_behaviors &mouse_click>;
 
-        //<&zip_temp_layer MOUSE_R_LAYER 300>;
+        <&zip_temp_layer MOUSE_R_LAYER 300>;
 
     lowspeedmode {
         layers = <SECONDARY_LAYER>;
