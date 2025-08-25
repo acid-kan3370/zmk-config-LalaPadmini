@@ -1,11 +1,9 @@
 #include <input/processors.dtsi>
+#include <dt-bindings/input/input-event-codes.h>
 #include <behaviors.dtsi>
 #include <dt-bindings/zmk/bt.h>
 #include <dt-bindings/zmk/keys.h>
 #include <dt-bindings/zmk/pointing.h>
-#include <dt-bindings/input/input-event-codes.h>
-
-
 
 #define DEFAULT_LAYER   0
 #define SECONDARY_LAYER 1
@@ -25,19 +23,18 @@
 &glidepoint_listener_R {
     input-processors =
         <&zip_xy_transform INPUT_TRANSFORM_X_INVERT>,
-        //<&zip_xy_transform (INPUT_TRANSFORM_XY_SWAP | INPUT_TRANSFORM_X_INVERT | INPUT_TRANSFORM_Y_INVERT)>,,
+        //<&zip_xy_transform (INPUT_TRANSFORM_XY_SWAP | INPUT_TRANSFORM_X_INVERT | INPUT_TRANSFORM_Y_INVERT)>,,,
         <&zip_xy_scaler 6 5>,
-        // デフォルトレイヤー: 左クリック
-        //<&zip_button_behaviors &mkp MB1>;
-        //<&zip_button_behaviors &mouse_click>;
-
+        // デフォルトレイヤー: 左クリック,
+        //<&zip_button_behaviors &mkp MB1>;,
+        //<&zip_button_behaviors &mouse_click>;,
         <&zip_temp_layer MOUSE_R_LAYER 300>;
 
     lowspeedmode {
         layers = <SECONDARY_LAYER>;
         input-processors =
             <&zip_xy_transform INPUT_TRANSFORM_X_INVERT>,
-            //<&zip_xy_transform (INPUT_TRANSFORM_XY_SWAP | INPUT_TRANSFORM_X_INVERT | INPUT_TRANSFORM_Y_INVERT)>,,
+            //<&zip_xy_transform (INPUT_TRANSFORM_XY_SWAP | INPUT_TRANSFORM_X_INVERT | INPUT_TRANSFORM_Y_INVERT)>,,,
             <&zip_xy_scaler 3 5>,
             <&zip_temp_layer MOUSE_R_LAYER 300>;
     };
@@ -46,7 +43,7 @@
         layers = <SCROLL_R_LAYER>;
         input-processors =
             <&zip_xy_to_scroll_mapper>,
-            //<&zip_scroll_transform (INPUT_TRANSFORM_XY_SWAP | INPUT_TRANSFORM_Y_INVERT)>,,
+            //<&zip_scroll_transform (INPUT_TRANSFORM_XY_SWAP | INPUT_TRANSFORM_Y_INVERT)>,,,
             <&zip_scroll_scaler 1 32>;
     };
 };
@@ -54,7 +51,7 @@
 &glidepoint_listener_L {
     input-processors =
         <&zip_xy_transform INPUT_TRANSFORM_X_INVERT>,
-        //<&zip_xy_transform (INPUT_TRANSFORM_XY_SWAP | INPUT_TRANSFORM_X_INVERT | INPUT_TRANSFORM_Y_INVERT)>,,
+        //<&zip_xy_transform (INPUT_TRANSFORM_XY_SWAP | INPUT_TRANSFORM_X_INVERT | INPUT_TRANSFORM_Y_INVERT)>,,,
         <&zip_xy_scaler 3 2>,
         <&zip_temp_layer MOUSE_L_LAYER 300>;
 
@@ -62,7 +59,7 @@
         layers = <TERTIARY_LAYER>;
         input-processors =
             <&zip_xy_transform INPUT_TRANSFORM_X_INVERT>,
-            //<&zip_xy_transform (INPUT_TRANSFORM_XY_SWAP | INPUT_TRANSFORM_X_INVERT | INPUT_TRANSFORM_Y_INVERT)>,,
+            //<&zip_xy_transform (INPUT_TRANSFORM_XY_SWAP | INPUT_TRANSFORM_X_INVERT | INPUT_TRANSFORM_Y_INVERT)>,,,
             <&zip_xy_scaler 3 4>,
             <&zip_temp_layer MOUSE_L_LAYER 300>;
     };
@@ -71,7 +68,7 @@
         layers = <SCROLL_L_LAYER>;
         input-processors =
             <&zip_xy_to_scroll_mapper>,
-            //<&zip_scroll_transform (INPUT_TRANSFORM_XY_SWAP | INPUT_TRANSFORM_Y_INVERT)>,,
+            //<&zip_scroll_transform (INPUT_TRANSFORM_XY_SWAP | INPUT_TRANSFORM_Y_INVERT)>,,,
             <&zip_scroll_scaler 1 32>;
     };
 };
@@ -171,6 +168,11 @@
             bindings = <&kp TAB>;
             key-positions = <10 11>;
         };
+
+        CapsLock {
+            bindings = <&kp LS(CAPSLOCK)>;
+            key-positions = <20 21>;
+        };
     };
 
     macros {
@@ -193,8 +195,9 @@
         zip_right_click_trigger_paste: zip_right_click_trigger_paste {
             compatible = "zmk,input-processor-behaviors";
             #input-processor-cells = <0>;
-            codes    = <INPUT_BTN_1>;
+            codes = <INPUT_BTN_1>;
             bindings = <&kp LC(V)  >;
+
             //bindings = <&mouse_click>;
         };
     };
@@ -243,10 +246,10 @@
             sensor-bindings = <&volume_up_down>, <&volume_up_down>;
 
             bindings = <
-&kp ESCAPE      &kp GRAVE     &trans     &kp LC(R)  &trans       &kp MINUS   &kp INS        &kp HOME        &kp PRINTSCREEN  &kp END
-&kp TAB         &kp LG(S)     &kp LC(Z)  &kp LC(Y)  &bootloader  &kp COMMA   &kp SEMICOLON  &kp PAGE_UP     &kp UP_ARROW     &kp PAGE_DOWN
-&kp LS(CAPS)    &kp LC(X)     &kp LC(C)  &kp LC(V)  &bootloader  &kp PERIOD  &kp SQT        &kp LEFT_ARROW  &kp DOWN_ARROW   &kp RIGHT_ARROW
-&kp LEFT_SHIFT  &kp LEFT_ALT             &trans     &trans       &trans      &trans                         &to 0            &kp LC(A)
+&kp ESCAPE        &kp GRAVE     &trans     &kp LC(R)  &trans       &kp MINUS   &kp INS        &kp HOME        &kp PRINTSCREEN  &kp END
+&kp TAB           &kp LG(S)     &kp LC(Z)  &kp LC(Y)  &bootloader  &kp COMMA   &kp SEMICOLON  &kp PAGE_UP     &kp UP_ARROW     &kp PAGE_DOWN
+&kp LEFT_SHIFT    &kp LC(X)     &kp LC(C)  &kp LC(V)  &bootloader  &kp PERIOD  &kp SQT        &kp LEFT_ARROW  &kp DOWN_ARROW   &kp RIGHT_ARROW
+&kp LEFT_CONTROL  &kp LEFT_ALT             &trans     &trans       &trans      &trans                         &to 0            &kp LC(A)
             >;
         };
 
