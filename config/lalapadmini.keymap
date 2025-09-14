@@ -23,18 +23,18 @@
 &glidepoint_listener_R {
     input-processors =
         <&zip_xy_transform INPUT_TRANSFORM_X_INVERT>,
-        //<&zip_xy_transform (INPUT_TRANSFORM_XY_SWAP | INPUT_TRANSFORM_X_INVERT | INPUT_TRANSFORM_Y_INVERT)>,,,
+        //<&zip_xy_transform (INPUT_TRANSFORM_XY_SWAP | INPUT_TRANSFORM_X_INVERT | INPUT_TRANSFORM_Y_INVERT)>,,,,
         <&zip_xy_scaler 6 5>,
-        // デフォルトレイヤー: 左クリック,
-        //<&zip_button_behaviors &mkp MB1>;,
-        //<&zip_button_behaviors &mouse_click>;,
+        // デフォルトレイヤー: 左クリック,,
+        //<&zip_button_behaviors &mkp MB1>;,,
+        //<&zip_button_behaviors &mouse_click>;,,
         <&zip_temp_layer MOUSE_R_LAYER 300>;
 
     lowspeedmode {
         layers = <SECONDARY_LAYER>;
         input-processors =
             <&zip_xy_transform INPUT_TRANSFORM_X_INVERT>,
-            //<&zip_xy_transform (INPUT_TRANSFORM_XY_SWAP | INPUT_TRANSFORM_X_INVERT | INPUT_TRANSFORM_Y_INVERT)>,,,
+            //<&zip_xy_transform (INPUT_TRANSFORM_XY_SWAP | INPUT_TRANSFORM_X_INVERT | INPUT_TRANSFORM_Y_INVERT)>,,,,
             <&zip_xy_scaler 3 5>,
             <&zip_temp_layer MOUSE_R_LAYER 300>;
     };
@@ -43,7 +43,7 @@
         layers = <SCROLL_R_LAYER>;
         input-processors =
             <&zip_xy_to_scroll_mapper>,
-            //<&zip_scroll_transform (INPUT_TRANSFORM_XY_SWAP | INPUT_TRANSFORM_Y_INVERT)>,,,
+            //<&zip_scroll_transform (INPUT_TRANSFORM_XY_SWAP | INPUT_TRANSFORM_Y_INVERT)>,,,,
             <&zip_scroll_scaler 1 32>;
     };
 };
@@ -51,7 +51,7 @@
 &glidepoint_listener_L {
     input-processors =
         <&zip_xy_transform INPUT_TRANSFORM_X_INVERT>,
-        //<&zip_xy_transform (INPUT_TRANSFORM_XY_SWAP | INPUT_TRANSFORM_X_INVERT | INPUT_TRANSFORM_Y_INVERT)>,,,
+        //<&zip_xy_transform (INPUT_TRANSFORM_XY_SWAP | INPUT_TRANSFORM_X_INVERT | INPUT_TRANSFORM_Y_INVERT)>,,,,
         <&zip_xy_scaler 3 2>,
         <&zip_temp_layer MOUSE_L_LAYER 300>;
 
@@ -59,7 +59,7 @@
         layers = <TERTIARY_LAYER>;
         input-processors =
             <&zip_xy_transform INPUT_TRANSFORM_X_INVERT>,
-            //<&zip_xy_transform (INPUT_TRANSFORM_XY_SWAP | INPUT_TRANSFORM_X_INVERT | INPUT_TRANSFORM_Y_INVERT)>,,,
+            //<&zip_xy_transform (INPUT_TRANSFORM_XY_SWAP | INPUT_TRANSFORM_X_INVERT | INPUT_TRANSFORM_Y_INVERT)>,,,,
             <&zip_xy_scaler 3 4>,
             <&zip_temp_layer MOUSE_L_LAYER 300>;
     };
@@ -68,7 +68,7 @@
         layers = <SCROLL_L_LAYER>;
         input-processors =
             <&zip_xy_to_scroll_mapper>,
-            //<&zip_scroll_transform (INPUT_TRANSFORM_XY_SWAP | INPUT_TRANSFORM_Y_INVERT)>,,,
+            //<&zip_scroll_transform (INPUT_TRANSFORM_XY_SWAP | INPUT_TRANSFORM_Y_INVERT)>,,,,
             <&zip_scroll_scaler 1 32>;
     };
 };
@@ -222,10 +222,10 @@
             sensor-bindings = <&scroll_left_right>, <&scroll_left_right>;
 
             bindings = <
-&kp F1                   &kp F2          &kp F3         &kp F4                   &kp F5             &kp F6         &kp F7                &kp F8             &kp F9         &kp F10
-&kp EXCLAMATION          &kp QUESTION    &kp DOLLAR     &kp AT_SIGN              &kp AMPERSAND      &kp ASTERISK   &kp LEFT_PARENTHESIS  &kp RIGHT_BRACE    &kp PIPE       &kp LEFT_BRACKET
-&kp INTERNATIONAL_3      &kp PERCENT     &kp SEMICOLON  &kp PERIOD               &kp SEMICOLON      &kp LESS_THAN  &kp GREATER_THAN      &kp RIGHT_BRACKET  &kp BACKSLASH  &kp F11
-&kp LS(INTERNATIONAL_3)  &kp UNDERSCORE                 &kp LS(INTERNATIONAL_1)  &kp DOUBLE_QUOTES  &trans         &trans                                   &kp COMMA      &kp F12
+&kp F1                   &kp F2        &kp F3      &kp F4                   &kp F5             &kp F6         &kp F7                &kp F8             &kp F9         &kp F10
+&kp EXCLAMATION          &kp QUESTION  &kp DOLLAR  &kp AT_SIGN              &kp AMPERSAND      &kp ASTERISK   &kp LEFT_PARENTHESIS  &kp RIGHT_BRACE    &kp PIPE       &kp LEFT_BRACKET
+&kp INT_YEN              &kp PERCENT   &kp HASH    &kp PERIOD               &kp SEMICOLON      &kp LESS_THAN  &kp GREATER_THAN      &kp RIGHT_BRACKET  &kp BACKSLASH  &kp F11
+&kp LS(INTERNATIONAL_3)  &kp CARET                 &kp LS(INTERNATIONAL_1)  &kp DOUBLE_QUOTES  &trans         &trans                                   &kp COMMA      &kp F12
             >;
         };
 
@@ -246,10 +246,10 @@
             sensor-bindings = <&volume_up_down>, <&volume_up_down>;
 
             bindings = <
-&kp ESCAPE        &kp GRAVE     &trans     &kp LC(R)  &trans       &kp MINUS   &kp INS        &kp HOME        &kp PRINTSCREEN  &kp END
-&kp TAB           &kp LG(S)     &kp LC(Z)  &kp LC(Y)  &bootloader  &kp COMMA   &kp SEMICOLON  &kp PAGE_UP     &kp UP_ARROW     &kp PAGE_DOWN
-&kp LEFT_SHIFT    &kp LC(X)     &kp LC(C)  &kp LC(V)  &bootloader  &kp PERIOD  &kp SQT        &kp LEFT_ARROW  &kp DOWN_ARROW   &kp RIGHT_ARROW
-&kp LEFT_CONTROL  &kp LEFT_ALT             &trans     &trans       &trans      &trans                         &to 0            &kp LC(A)
+&kp ESCAPE               &kp GRAVE     &kp LS(CAPS)  &kp LC(R)  &trans       &kp MINUS   &kp INS        &kp HOME        &kp PRINTSCREEN  &kp END
+&kp TAB                  &kp LG(S)     &kp LC(Z)     &kp LC(Y)  &bootloader  &kp COMMA   &kp SEMICOLON  &kp PAGE_UP     &kp UP_ARROW     &kp PAGE_DOWN
+&mt LEFT_SHIFT LS(CAPS)  &kp LC(X)     &kp LC(C)     &kp LC(V)  &bootloader  &kp PERIOD  &kp SQT        &kp LEFT_ARROW  &kp DOWN_ARROW   &kp RIGHT_ARROW
+&kp LEFT_CONTROL         &kp LEFT_ALT                &trans     &trans       &trans      &trans                         &to 0            &kp LC(A)
             >;
         };
 
