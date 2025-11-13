@@ -23,18 +23,18 @@
 &glidepoint_listener_R {
     input-processors =
         <&zip_xy_transform INPUT_TRANSFORM_X_INVERT>,
-        //<&zip_xy_transform (INPUT_TRANSFORM_XY_SWAP | INPUT_TRANSFORM_X_INVERT | INPUT_TRANSFORM_Y_INVERT)>,,,,
+        //<&zip_xy_transform (INPUT_TRANSFORM_XY_SWAP | INPUT_TRANSFORM_X_INVERT | INPUT_TRANSFORM_Y_INVERT)>,,,,,
         <&zip_xy_scaler 6 5>,
-        // デフォルトレイヤー: 左クリック,,
-        //<&zip_button_behaviors &mkp MB1>;,,
-        //<&zip_button_behaviors &mouse_click>;,,
+        // デフォルトレイヤー: 左クリック,,,
+        //<&zip_button_behaviors &mkp MB1>;,,,
+        //<&zip_button_behaviors &mouse_click>;,,,
         <&zip_temp_layer MOUSE_R_LAYER 300>;
 
     lowspeedmode {
         layers = <SECONDARY_LAYER>;
         input-processors =
             <&zip_xy_transform INPUT_TRANSFORM_X_INVERT>,
-            //<&zip_xy_transform (INPUT_TRANSFORM_XY_SWAP | INPUT_TRANSFORM_X_INVERT | INPUT_TRANSFORM_Y_INVERT)>,,,,
+            //<&zip_xy_transform (INPUT_TRANSFORM_XY_SWAP | INPUT_TRANSFORM_X_INVERT | INPUT_TRANSFORM_Y_INVERT)>,,,,,
             <&zip_xy_scaler 3 5>,
             <&zip_temp_layer MOUSE_R_LAYER 300>;
     };
@@ -43,7 +43,7 @@
         layers = <SCROLL_R_LAYER>;
         input-processors =
             <&zip_xy_to_scroll_mapper>,
-            //<&zip_scroll_transform (INPUT_TRANSFORM_XY_SWAP | INPUT_TRANSFORM_Y_INVERT)>,,,,
+            //<&zip_scroll_transform (INPUT_TRANSFORM_XY_SWAP | INPUT_TRANSFORM_Y_INVERT)>,,,,,
             <&zip_scroll_scaler 1 32>;
     };
 };
@@ -51,7 +51,7 @@
 &glidepoint_listener_L {
     input-processors =
         <&zip_xy_transform INPUT_TRANSFORM_X_INVERT>,
-        //<&zip_xy_transform (INPUT_TRANSFORM_XY_SWAP | INPUT_TRANSFORM_X_INVERT | INPUT_TRANSFORM_Y_INVERT)>,,,,
+        //<&zip_xy_transform (INPUT_TRANSFORM_XY_SWAP | INPUT_TRANSFORM_X_INVERT | INPUT_TRANSFORM_Y_INVERT)>,,,,,
         <&zip_xy_scaler 3 2>,
         <&zip_temp_layer MOUSE_L_LAYER 300>;
 
@@ -59,7 +59,7 @@
         layers = <TERTIARY_LAYER>;
         input-processors =
             <&zip_xy_transform INPUT_TRANSFORM_X_INVERT>,
-            //<&zip_xy_transform (INPUT_TRANSFORM_XY_SWAP | INPUT_TRANSFORM_X_INVERT | INPUT_TRANSFORM_Y_INVERT)>,,,,
+            //<&zip_xy_transform (INPUT_TRANSFORM_XY_SWAP | INPUT_TRANSFORM_X_INVERT | INPUT_TRANSFORM_Y_INVERT)>,,,,,
             <&zip_xy_scaler 3 4>,
             <&zip_temp_layer MOUSE_L_LAYER 300>;
     };
@@ -68,7 +68,7 @@
         layers = <SCROLL_L_LAYER>;
         input-processors =
             <&zip_xy_to_scroll_mapper>,
-            //<&zip_scroll_transform (INPUT_TRANSFORM_XY_SWAP | INPUT_TRANSFORM_Y_INVERT)>,,,,
+            //<&zip_scroll_transform (INPUT_TRANSFORM_XY_SWAP | INPUT_TRANSFORM_Y_INVERT)>,,,,,
             <&zip_scroll_scaler 1 32>;
     };
 };
@@ -234,7 +234,7 @@
             bindings = <
 &kp ESCAPE            &kp KP_NUMBER_7  &kp KP_NUMBER_8  &kp KP_NUMBER_9  &kp UNDERSCORE  &kp N7  &kp N8  &kp N9  &kp SLASH   &kp DOUBLE_QUOTES
 &kp TAB               &kp KP_NUMBER_4  &kp KP_NUMBER_5  &kp KP_NUMBER_6  &kp AMPERSAND   &kp N4  &kp N5  &kp N6  &kp PERIOD  &kp MINUS
-&mt LEFT_SHIFT TILDE  &kp KP_NUMBER_1  &kp KP_NUMBER_2  &kp KP_NUMBER_3  &kp COLON       &kp N1  &kp N2  &kp N3  &kp N0      &kp EQUAL
+&mt LEFT_SHIFT SLASH  &kp KP_NUMBER_1  &kp KP_NUMBER_2  &kp KP_NUMBER_3  &kp COLON       &kp N1  &kp N2  &kp N3  &kp N0      &kp EQUAL
 &kp DOUBLE_QUOTES     &kp KP_NUMBER_0                   &kp SPACE        &kp ENTER       &trans  &trans          &kp MINUS   &kp COLON
             >;
 
